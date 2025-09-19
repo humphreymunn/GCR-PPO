@@ -1,6 +1,6 @@
 # GCR-PPO for IsaacLab
 
-![GCR-PPO](docs/examples_result_comparison-1.pdf)
+![GCR-PPO](docs/examples.png)
 
 **GCR-PPO** is a modification of PPO for multi-objective robot RL that:
 - uses a **multi-head critic** to obtain *per-reward* advantages and gradients,
@@ -99,21 +99,28 @@ The reward_component_task_rew list controls priority during gradient surgery:
 task components are protected from being weakened by regularisers.
 
 ## Paper
-Methodology, analysis, and results are described in our paper:
+Methodology, analysis, and results are described in our paper: https://arxiv.org/abs/2509.14816
 
 We include:
  - comparisons against massively parallel GPU PPO across 13 IsaacLab tasks,
  - two custom multi-objective suites (Humanoid Running, Full-Body Throwing),
  - ablations (multi-head only vs. GCR) and conflict–performance analyses.
 
-![Method Overview](docs/actor_critic_pcgrad_method-3-1.pdf)
+![Method Overview](docs/method.png)
 
 ### Citation
 
 If you use this code, please cite our work:
-
+```bash
+@article{munn2025scalable,
+  title={Scalable Multi-Objective Robot Reinforcement Learning through Gradient Conflict Resolution},
+  author={Munn, Humphrey and Tidd, Brendan and Böhm, Peter and Gallagher, Marcus and Howard, David},
+  journal={arXiv preprint arXiv:2509.14816},
+  year={2025}
+}
+```
 Also cite IsaacLab/Orbit, on which this repository is based:
-
+```bash
 @article{mittal2023orbit,
    author  = {Mittal, Mayank and Yu, Calvin and Yu, Qinxi and Liu, Jingzhou and Rudin, Nikita and Hoeller, David and Yuan, Jia Lin and Singh, Ritvik and Guo, Yunrong and Mazhar, Hammad and Mandlekar, Ajay and Babich, Buck and State, Gavriel and Hutter, Marco and Garg, Animesh},
    journal = {IEEE Robotics and Automation Letters},
@@ -124,7 +131,7 @@ Also cite IsaacLab/Orbit, on which this repository is based:
    pages   = {3740-3747},
    doi     = {10.1109/LRA.2023.3270034}
 }
-
+```
 ## Acknowledgements
  - This project builds upon IsaacLab (NVIDIA) and the Orbit framework.
  - Thanks to the IsaacLab and RSL-RL communities for their libraries, examples, and documentation.
