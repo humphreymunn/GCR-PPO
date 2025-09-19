@@ -61,6 +61,8 @@ class _TorchPolicyExporter(torch.nn.Module):
                 self.rnn = copy.deepcopy(policy.memory_s.rnn)
         else:
             raise ValueError("Policy does not have an actor/student module.")
+        if hasattr(policy, "discriminator"): #diayn
+            self.discriminator = copy.deepcopy(policy.discriminator)
         # set up recurrent network
         if self.is_recurrent:
             self.rnn.cpu()

@@ -82,8 +82,7 @@ class ShadowHandOverEnv(DirectMARLEnv):
         self.y_unit_tensor = torch.tensor([0, 1, 0], dtype=torch.float, device=self.device).repeat((self.num_envs, 1))
         self.z_unit_tensor = torch.tensor([0, 0, 1], dtype=torch.float, device=self.device).repeat((self.num_envs, 1))
         self.reward_components = 9
-        self.reward_component_names = ["dist_reward", "rot_reward", "open_reward", "action_penalty", "lfinger_dist","rfinger_dist", "draw_open_little", "draw_open_medium", "draw_open_large"]
-        self.reward_component_task_rew = ["dist_reward", "rot_reward", "open_reward", "lfinger_dist", "rfinger_dist", "draw_open_little", "draw_open_medium", "draw_open_large"]
+        self.reward_component_names = ["dist_reward", "rot_reward", "open_reward", "action_penalty","lfinger_dist","rfinger_dist", "draw_open_little", "draw_open_medium", "draw_open_large"]
         
     def _setup_scene(self):
         # add hand, in-hand object, and goal object
